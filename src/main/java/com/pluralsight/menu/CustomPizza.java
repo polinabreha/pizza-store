@@ -3,25 +3,24 @@ package com.pluralsight.menu;
 import java.util.List;
 
 public class CustomPizza extends Pizza{
-    public CustomPizza(String crust, List<String> meats, List<String> cheese, List<String> toppings,
-                       List<String> sauces, List<String> sides, int size, int extraMeat, int extraCheese) {
-        super(crust, meats, cheese, toppings, sauces, sides, size, extraMeat, extraCheese);
+    public CustomPizza(int size) {
+        super(size);
     }
 
     public void addCrust(String crust) {
-        if (getAvailableCrust().contains(crust)) {
+        if (crustList.contains(crust)) {
             this.crust  = crust;
         }
     }
 
     public void addMeat(String meat) {
-        if(getAvailableMeats().contains(meat)) {
+        if(meatList.contains(meat)) {
             this.meats.add(meat);
         }
     }
 
     public void removeMeat (String meat){
-        if(!meats.contains(meat)){
+        if(!meatList.contains(meat)){
             System.out.println(meat + " not found");
         }else{
             meats.remove(meat);
@@ -29,13 +28,13 @@ public class CustomPizza extends Pizza{
     }
 
     public void addCheese(String cheese) {
-        if(getAvailableCheese().contains(cheese)) {
+        if(cheeseList.contains(cheese)) {
             this.cheese.add(cheese);
         }
     }
 
     public void removeCheese(String cheese) {
-        if(!getAvailableCheese().contains(cheese)) {
+        if(!cheeseList.contains(cheese)) {
             System.out.println( cheese + " not found");
         }else{
             this.cheese.remove(cheese);
@@ -43,13 +42,13 @@ public class CustomPizza extends Pizza{
     }
 
     public void addToppings(String topping) {
-        if(getAvailableToppings().contains(topping)) {
+        if(toppingsList.contains(topping)) {
             this.toppings.add(topping);
         }
     }
 
     public void removeToppings(String topping) {
-        if(!getAvailableToppings().contains(topping)) {
+        if(!toppingsList.contains(topping)) {
             System.out.println( topping + " not found");
         }else{
             this.toppings.remove(topping);
@@ -57,25 +56,25 @@ public class CustomPizza extends Pizza{
     }
 
     public void addSauces(String sauces) {
-        if(getAvailableSauces().contains(sauces)) {
+        if(saucesList.contains(sauces)) {
             this.sauces.add(sauces);
         }
     }
 
     public void removeSauces(String sauces) {
-        if(!getAvailableSauces().contains(sauces)) {
+        if(!saucesList.contains(sauces)) {
             System.out.println(sauces + " not found");
         }else{
             this.sauces.remove(sauces);
         }
     }
     public void addSides(String sides) {
-        if(getAvailableSides().contains(sides)) {
+        if(sidesList.contains(sides)) {
             this.sides.add(sides);
         }
     }
     public void removeSides(String sides) {
-        if(!getAvailableSides().contains(sides)) {
+        if(!sidesList.contains(sides)) {
             System.out.println(sides + " not found");
         }else {
             this.sides.remove(sides);
