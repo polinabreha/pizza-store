@@ -7,7 +7,6 @@ public abstract class Pizza implements MenuItem {
     protected int size;
     protected String crust;
     protected List<String>  meats, cheese , toppings , sauces , sides;
-    protected int extraMeatCounts, extraCheeseCounts;
 
 
     protected static final List<String> crustList = List.of(

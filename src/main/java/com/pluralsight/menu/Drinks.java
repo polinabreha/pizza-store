@@ -1,28 +1,24 @@
 package com.pluralsight.menu;
-import java.util.ArrayList;
 import java.util.List;
 
-public class Drinks implements MenuItem {
-    private String name;
+public class Drinks extends FixedItem {
     private String size;
-
     public Drinks(String name,  String size) {
-        this.name = name;
+        super(name, 0);
         this.size = size;
     }
-//    public List<String> getDrinkName() {
-//        ArrayList<String> drinkName = new ArrayList<>();
-//        drinkName.add("Water");
-//        drinkName.add("Orange juice");
-//        drinkName.add("Coca-Cola");
-//        drinkName.add("Diet Coca-Cola");
-//        drinkName.add("Root Beer");
-//        drinkName.add("Cream soda");
-//        drinkName.add("Poppi probiotic drinks");
-//        drinkName.add("Kombucha");
-//        drinkName.add("Apple juice");
-//        return drinkName;
-//    }
+
+    private static final List<String> listOfDrinks = List.of(
+            "Water",
+            "Orange juice",
+            "Coca-Cola",
+            "Diet Coca-Cola",
+            "Root Beer",
+            "Cream soda",
+            "Poppi probiotic drinks",
+            "Kombucha",
+            "Apple juice"
+    );
 
     @Override
     public String getName() {
