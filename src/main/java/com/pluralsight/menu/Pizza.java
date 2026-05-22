@@ -4,27 +4,63 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Pizza implements MenuItem {
-    protected List<String> crust , meats, cheese , toppings , sauces , sides;
-    protected double price;
+    protected int size;
+    protected String crust;
+    protected List<String>  meats, cheese , toppings , sauces , sides;
+    protected int extraMeatCounts, extraCheeseCounts;
 
-    public Pizza(List<String> crust, List<String> meats, List<String> cheese, List<String> toppings, List<String> sauces, List<String> sides, double price) {
+    public Pizza(String crust, List<String> meats, List<String> cheese, List<String> toppings,
+                 List<String> sauces, List<String> sides,  int size, int extraMeatCounts, int extraCheeseCounts) {
         this.crust = crust;
         this.meats = meats;
         this.cheese = cheese;
         this.toppings = toppings;
         this.sauces = sauces;
         this.sides = sides;
-        this.price = price;
+        this.size = size;
+        this.extraMeatCounts = extraMeatCounts;
+        this.extraCheeseCounts = extraCheeseCounts;
     }
 
+    public int getExtraMeatCounts() {
+        return extraMeatCounts;
+    }
 
-    public List<String> getAvailableCrust() {
+    public int getExtraCheeseCounts() {
+        return extraCheeseCounts;
+    }
+
+    public String getCrust() {
+        return crust;
+    }
+
+    public List<String> getMeats() {
+        return meats;
+    }
+
+    public List<String> getCheese() {
+        return cheese;
+    }
+
+    public List<String> getToppings() {
+        return toppings;
+    }
+
+    public List<String> getSauces() {
+        return sauces;
+    }
+
+    public List<String> getSides() {
+        return sides;
+    }
+
+    public String getAvailableCrust() {
         ArrayList<String> crust = new ArrayList<>();
         crust.add("thin");
         crust.add("regular");
         crust.add("thick");
         crust.add ("cauliflower");
-        return crust;
+        return String.valueOf(crust);
     }
 
     public List<String> getAvailableMeats() {
@@ -80,37 +116,14 @@ public abstract class Pizza implements MenuItem {
         return sides;
     }
 
-    public List<String> getCrust() {
-        return crust;
-    }
-
-    public List<String> getMeats() {
-        return meats;
-    }
-
-    public List<String> getCheese() {
-        return cheese;
-    }
-
-    public List<String> getToppings() {
-        return toppings;
-    }
-
-    public List<String> getSauces() {
-        return sauces;
-    }
-
-    public List<String> getSides() {
-        return sides;
+    public int getSize() {
+        return size;
     }
 
     @Override
-    public String getName() {
-        return "Pizza";
-    }
+    public  abstract String getName();
 
     @Override
-    public double getPrice() {
-        return price;
-    }
+    public  abstract double getPrice();
+
 }
