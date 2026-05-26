@@ -90,15 +90,17 @@ public abstract class Pizza implements MenuItem {
 
     @Override
     public String toString() {
-        return "Custom Pizza\n" +
-                "size:" + size +
-                "\n crust: " + crust + '\'' +
-                "\n  meats: " + meats +
-                "\n  cheese: " + cheese +
-                "\n toppings: " + toppings +
-                "\n sauces: " + sauces +
-                "\n sides: " + sides +
-                "\n stuffedCrust: \n" + stuffedCrust ;
+        return """
+                Custom Pizza
+                Crust : %s
+                Meats : %s
+                Cheese : %s
+                Toppings : %s
+                Sauces : %s
+                Sides : %s
+                Price : %.2f
+                """.formatted(crust,meats,cheese,toppings,sauces,sides,getPrice());
+
 
     }
 }

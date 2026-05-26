@@ -1,0 +1,13 @@
+==========Receipt===========
+
+Date: 2026-05-26_14:06:27
+
+Items: 
+Custom Pizza	17.10
+ --- Stuffed Crust
+Garlic Knots	1.50
+water small	2.00
+orange juice medium	2.50
+
+Total: 23.10
+Thank you for visiting us today!

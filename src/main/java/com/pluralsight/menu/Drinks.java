@@ -30,9 +30,9 @@ public class Drinks extends FixedItem {
 
     @Override
     public String toString() {
-        return "Drinks\n" +
-                "size: '" + size  +
-                "\n name='" + name  ;
+        return """
+                %s  (%s)     -%.2f
+                """.formatted(name,size,getPrice());
 
     }
 }

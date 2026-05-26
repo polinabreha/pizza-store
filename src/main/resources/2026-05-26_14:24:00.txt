@@ -1,0 +1,9 @@
+==========Receipt===========
+
+Date: 2026-05-26_14:24:00
+
+Items: 
+water small	2.00
+
+Total: 2.00
+Thank you for visiting us today!

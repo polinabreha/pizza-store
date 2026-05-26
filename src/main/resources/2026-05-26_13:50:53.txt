@@ -1,0 +1,11 @@
+==========Receipt===========
+
+Date: 2026-05-26_13:50:53
+
+Items: 
+Custom Pizza	17.10
+ --- Stuffed Crust
+coca-cola small	2.00
+
+Total: 19.10
+Thank you for visiting us today!

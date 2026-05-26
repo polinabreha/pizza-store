@@ -75,7 +75,7 @@ public class HomeScreen {
     public static void addPizza(Scanner scanner, Order order) {
         int size = 0;
         while (size != 8 && size != 12 && size != 16) {
-            System.out.print("What pizza size would you like to add?(8 , 12,16) ");
+            System.out.print("What pizza size would you like to add?(8, 12, 16) ");
             size = scanner.nextInt();
             scanner.nextLine();
             if (size != 8 && size != 12 && size != 16) {
@@ -308,10 +308,32 @@ public class HomeScreen {
         System.out.println("Garlic Knots has been added to your order!");
     }
 
+    public static boolean isValidOrder(Order order){
+        boolean hasPizza = false;
+        boolean hasOtherThings = false;
+
+        for(MenuItem item : order.getItems()){
+            if (item instanceof Pizza){
+                hasPizza = true;
+            }
+
+            if (item instanceof Drinks || item instanceof Sides){
+                hasOtherThings = true;
+            }
+        }
+
+        return hasPizza || hasOtherThings;
+    }
+
     public static void checkOut(Scanner scanner, Order order){
+        if(!isValidOrder(order)){
+            System.out.println("Invalid order!");
+            return;
+        }
+
         System.out.println("======ORDER======");
         for(MenuItem item : order.getItems()){
-            System.out.println("----" + item  + "\t" + String.format("%.2f", item.getPrice()));
+            System.out.println("----" + item );
         }
         System.out.println("-------------------");
         System.out.println("Total: $" + String.format("%.2f",order.calculateTotalPrice()));
