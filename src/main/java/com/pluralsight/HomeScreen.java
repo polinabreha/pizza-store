@@ -24,7 +24,8 @@ public class HomeScreen {
             scanner.nextLine();
             switch (choice) {
                 case 1:
-                    orderScreen(scanner);
+                    Order order = new Order();
+                    orderScreen(scanner, order);
                     break;
                 case 0:
                     exit = true;
@@ -36,8 +37,9 @@ public class HomeScreen {
         }
     }
 
-    public static void orderScreen(Scanner scanner) {
+    public static void orderScreen(Scanner scanner , Order order) {
         boolean exit = false;
+        while (!exit) {
         System.out.println("1. Add Pizza\n" +
                 "2. Add Drink\n" +
                 "3. Add Garlic Knots\n" +
@@ -48,16 +50,16 @@ public class HomeScreen {
         scanner.nextLine();
         switch (choice) {
             case 1:
-                addPizza(scanner , new Order());
+                addPizza(scanner , order);
                 break;
             case 2 :
-                //add drink();
+                addDrink(scanner , order);
                 break;
             case 3 :
-                //add garlic knots();
+                addGarlicKnots(order);
                 break;
             case 4:
-                //checkout();
+                checkOut(scanner , order);
                 break;
             case 0:
                 exit = true;
@@ -65,7 +67,7 @@ public class HomeScreen {
             default:
                 System.out.println("Invalid choice");
 
-
+        }
         }
     }
 
@@ -243,8 +245,67 @@ public class HomeScreen {
             customPizza.addSides(sideExtra);
         }
 
+        System.out.print("Would you like to add stuffed crust?(yes/no)");
+        String stuffedCrust = scanner.nextLine();
+        if(stuffedCrust.equalsIgnoreCase("yes")) {
+            customPizza.setStuffedCrust(true);
+        }
+
         order.addItem(customPizza);
         System.out.println("Pizza has been added to your order!");
+
+    }
+
+    public static void addDrink(Scanner scanner, Order order){
+        String drinkName = "";
+
+        while(!Drinks.drinkList.contains(drinkName)){
+            System.out.println("Drinks:");
+            Drinks.drinkList.forEach(drinks ->
+                System.out.println("----" + drinks));
+
+                System.out.print("Choose the drink from the following options:");
+                drinkName = scanner.nextLine();
+                if(!Drinks.drinkList.contains(drinkName)){
+                    System.out.println("Invalid choice");
+                }
+        }
+        String drinkSize = "";
+        while(!Drinks.sizeList.contains(drinkSize)){
+            System.out.println("Sizes: ");
+            Drinks.sizeList.forEach(drinks ->
+                System.out.println("----" + drinks));
+            System.out.print("Choose the drink size from the following options:");
+            drinkSize = scanner.nextLine();
+            if(!Drinks.sizeList.contains(drinkSize)){
+                System.out.println("Invalid choice");
+            }
+        }
+        Drinks drink = new Drinks(drinkName ,drinkSize );
+        order.addItem(drink);
+        System.out.println("Drink has been added to your order!");
+
+    }
+
+    public static void addGarlicKnots(Order order){
+        Sides garlicKnots = new Sides("Garlic Knots", 1.50);
+        order.addItem(garlicKnots);
+        System.out.println("Garlic Knots has been added to your order!");
+    }
+
+    public static void checkOut(Scanner scanner, Order order){
+        for(MenuItem item : order.getItems()){
+            System.out.println("----" + item.getName()  + "\t" + String.format("%.2f", item.getPrice()));
+        }
+        System.out.println("Total: $" + String.format("%.2f",order.calculateTotalPrice()));
+        System.out.print("Confirm or cancel?");
+        String confirmOrCancel = scanner.nextLine();
+        if(confirmOrCancel.equalsIgnoreCase("confirm")){
+            Receipt.transaction(Receipt.buildReceipt(order));
+            System.out.println("Your receipt has been successfully saved!");
+        }else if(confirmOrCancel.equalsIgnoreCase("cancel")){
+            return;
+        }
 
     }
 
