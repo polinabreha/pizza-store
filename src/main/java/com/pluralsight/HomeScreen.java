@@ -49,6 +49,22 @@ public class HomeScreen {
         switch (choice) {
             case 1:
                 addPizza(scanner , new Order());
+                break;
+            case 2 :
+                //add drink();
+                break;
+            case 3 :
+                //add garlic knots();
+                break;
+            case 4:
+                //checkout();
+                break;
+            case 0:
+                exit = true;
+                break;
+            default:
+                System.out.println("Invalid choice");
+
 
         }
     }
@@ -59,8 +75,9 @@ public class HomeScreen {
         scanner.nextLine();
         CustomPizza customPizza = new CustomPizza(size);
 
+        //crust
         System.out.println("Choose the crust : ");
-        crustList.stream().forEach(crust -> {
+        crustList.forEach(crust -> {
             System.out.println("----" + crust);
         } );
 
@@ -68,19 +85,21 @@ public class HomeScreen {
         String pizzaCrust = scanner.nextLine();
         customPizza.addCrust(pizzaCrust);
 
-        System.out.println("Choose toppings: ");
-        meatList.stream().forEach(meat -> {
+        //meats
+        System.out.println("Choose meats: ");
+        meatList.forEach(meat -> {
             System.out.println("----" + meat);
         });
         System.out.print("Enter your choice: ");
         String pizzaMeat = scanner.nextLine();
         customPizza.addMeat(pizzaMeat);
 
+        //extra meat
         System.out.print("Would you like to add extra meat?(yes/no)");
         String extraMeat = scanner.nextLine();
 
         while (extraMeat.equalsIgnoreCase("yes")) {
-            meatList.stream().forEach(meat -> {
+            meatList.forEach(meat -> {
                 System.out.println("----" + meat);
             });
             System.out.print("Enter your choice: ");
@@ -90,18 +109,19 @@ public class HomeScreen {
             extraMeat = scanner.nextLine();
 
         }
-
-        cheeseList.stream().forEach(cheese -> {
+       // cheese
+        cheeseList.forEach(cheese -> {
             System.out.println("----" + cheese);
         });
         System.out.print("Enter your choice: ");
         String pizzaCheese = scanner.nextLine();
         customPizza.addCheese(pizzaCheese);
 
+        //extra cheese
         System.out.println("Would you like to add extra cheese?(yes/no) ");
         String extraCheese = scanner.nextLine();
         while (extraCheese.equalsIgnoreCase("yes")) {
-            cheeseList.stream().forEach(cheese -> {
+            cheeseList.forEach(cheese -> {
                 System.out.println("----" + cheese);
             });
             System.out.print("Enter your choice: ");
@@ -109,6 +129,28 @@ public class HomeScreen {
             customPizza.addCheese(cheeseExtra);
             System.out.print("Would you like to add another extra cheese?(yes/no)");
             extraCheese = scanner.nextLine();
+        }
+
+        //regular toppings
+
+        toppingsList.forEach(topping -> {
+            System.out.println("----" + topping);
+        });
+        System.out.print("Enter your choice: ");
+        String pizzaTopping = scanner.nextLine();
+
+        //extra regular toppings
+        System.out.println("Would you like to add extra topping?(yes/no) ");
+        String extraTopping = scanner.nextLine();
+        while(extraTopping.equalsIgnoreCase("yes")) {
+            toppingsList.forEach(topping -> {
+                System.out.println("----" + topping);
+            });
+            System.out.print("Enter your choice: ");
+            String toppingExtra = scanner.nextLine();
+            customPizza.addToppings(toppingExtra);
+            System.out.println("Would you like to add extra topping?(yes/no)");
+            extraTopping = scanner.nextLine();
         }
 
     }
