@@ -9,12 +9,16 @@ public class CustomPizza extends Pizza{
     public void addCrust(String crust) {
         if (crustList.contains(crust)) {
             this.crust  = crust;
+        }else{
+            System.out.println(crust + " is not a valid crust");
         }
     }
 
     public void addMeat(String meat) {
         if(meatList.contains(meat)) {
             this.meats.add(meat);
+        }else {
+            System.out.println(meat + " is not a valid meat");
         }
     }
 
@@ -29,6 +33,8 @@ public class CustomPizza extends Pizza{
     public void addCheese(String cheese) {
         if(cheeseList.contains(cheese)) {
             this.cheese.add(cheese);
+        }else{
+            System.out.println(cheese + " is not a valid cheese");
         }
     }
 
@@ -43,6 +49,8 @@ public class CustomPizza extends Pizza{
     public void addToppings(String topping) {
         if(toppingsList.contains(topping)) {
             this.toppings.add(topping);
+        }else{
+            System.out.println(topping + " is not a valid topping");
         }
     }
 
@@ -57,6 +65,8 @@ public class CustomPizza extends Pizza{
     public void addSauces(String sauces) {
         if(saucesList.contains(sauces)) {
             this.sauces.add(sauces);
+        }else{
+            System.out.println(sauces + " is not a valid sauces");
         }
     }
 
@@ -70,6 +80,8 @@ public class CustomPizza extends Pizza{
     public void addSides(String sides) {
         if(sidesList.contains(sides)) {
             this.sides.add(sides);
+        }else{
+            System.out.println(sides + " is not a valid sides");
         }
     }
     public void removeSides(String sides) {

@@ -70,9 +70,19 @@ public class HomeScreen {
     }
 
     public static void addPizza(Scanner scanner, Order order) {
-        System.out.println("What pizza size would you like to add?(8 , 12,16) ");
-        int size = scanner.nextInt();
-        scanner.nextLine();
+       // System.out.print("What pizza size would you like to add?(8 , 12,16) ");
+        //int size = scanner.nextInt();
+        //scanner.nextLine();
+
+        int size = 0;
+        while (size != 8 && size != 12 && size != 16) {
+            System.out.print("What pizza size would you like to add?(8 , 12,16) ");
+            size = scanner.nextInt();
+            scanner.nextLine();
+            if (size != 8 && size != 12 && size != 16) {
+                System.out.println("Invalid choice");
+            }
+        }
         CustomPizza customPizza = new CustomPizza(size);
 
         //crust
@@ -83,6 +93,10 @@ public class HomeScreen {
 
         System.out.print("Enter your choice: ");
         String pizzaCrust = scanner.nextLine();
+        if(!crustList.contains(pizzaCrust)){
+            System.out.println("Invalid choice");
+            return;
+        }
         customPizza.addCrust(pizzaCrust);
 
         //meats
@@ -110,6 +124,7 @@ public class HomeScreen {
 
         }
        // cheese
+        System.out.println("Choose cheese");
         cheeseList.forEach(cheese -> {
             System.out.println("----" + cheese);
         });
@@ -133,6 +148,7 @@ public class HomeScreen {
 
         //regular toppings
 
+        System.out.println("Choose topping :");
         toppingsList.forEach(topping -> {
             System.out.println("----" + topping);
         });
@@ -151,6 +167,28 @@ public class HomeScreen {
             customPizza.addToppings(toppingExtra);
             System.out.println("Would you like to add extra topping?(yes/no)");
             extraTopping = scanner.nextLine();
+        }
+
+        //sauces
+        System.out.println("Choose sauce :");
+        saucesList.forEach(sauce -> {
+            System.out.println("----" + sauce);
+        });
+        System.out.print("Enter your choice: ");
+        String pizzaSauce = scanner.nextLine();
+
+        //extra sauce
+
+        System.out.println("Would you like to add extra sauce?(yes/no)");
+        String extraSauce = scanner.nextLine();
+        while(extraSauce.equalsIgnoreCase("yes")) {
+            saucesList.forEach(sauce -> {
+                System.out.println("----" + sauce);
+            });
+            System.out.print("Enter your choice: ");
+            String sauceExtra = scanner.nextLine();
+            customPizza.addSauces(sauceExtra);
+            System.out.println();
         }
 
     }
