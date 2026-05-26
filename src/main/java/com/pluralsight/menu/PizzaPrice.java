@@ -8,7 +8,7 @@ public class PizzaPrice {
        int cheeseCount = pizza.getCheese().size();
 
        int extraMeat = Math.max(0, meatCount - 1);
-       int extraCheese = Math.max(0,cheeseCount);
+       int extraCheese = Math.max(0,cheeseCount - 1);
 
 
        double basePrice = switch(pizza.getSize()){
