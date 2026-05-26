@@ -9,14 +9,14 @@ public abstract class Pizza implements MenuItem {
     protected List<String>  meats, cheese , toppings , sauces , sides;
 
 
-    protected static final List<String> crustList = List.of(
+    public static final List<String> crustList = List.of(
             "thin",
             "regular",
             "thick",
             "cauliflower"
 
     );
-    protected static final List<String> meatList = List.of (
+    public static final List<String> meatList = List.of (
             "pepperoni",
             "sausage",
             "ham",
@@ -24,14 +24,14 @@ public abstract class Pizza implements MenuItem {
             "chicken",
             "meatball"
     );
-    protected static final List<String> cheeseList =  List.of (
+    public static final List<String> cheeseList =  List.of (
             "mozzarella",
             "parmesan",
             "ricotta",
             "goat cheese",
             "buffalo"
     );
-    protected static final List<String> toppingsList = List.of(
+    public static final List<String> toppingsList = List.of(
             "onions",
             "mushrooms",
             "bell peppers",
@@ -42,7 +42,7 @@ public abstract class Pizza implements MenuItem {
             "pineapple",
             "anchovies"
     );
-    protected static final List<String> saucesList = List.of(
+    public static final List<String> saucesList = List.of(
            "marinara",
             "alfredo",
             "pesto",
@@ -50,7 +50,7 @@ public abstract class Pizza implements MenuItem {
             "buffalo",
              "olive oil"
     );
-    protected static final List<String> sidesList =  List.of(
+    public static final List<String> sidesList =  List.of(
            "red pepper",
            "parmesan"
     );
