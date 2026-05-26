@@ -1,6 +1,5 @@
 package com.pluralsight.menu;
 
-import java.util.List;
 
 public class CustomPizza extends Pizza{
     public CustomPizza(int size) {
@@ -20,7 +19,7 @@ public class CustomPizza extends Pizza{
     }
 
     public void removeMeat (String meat){
-        if(!meatList.contains(meat)){
+        if(!meats.contains(meat)){
             System.out.println(meat + " not found");
         }else{
             meats.remove(meat);
@@ -34,7 +33,7 @@ public class CustomPizza extends Pizza{
     }
 
     public void removeCheese(String cheese) {
-        if(!cheeseList.contains(cheese)) {
+        if(!this.cheese.contains(cheese)) {
             System.out.println( cheese + " not found");
         }else{
             this.cheese.remove(cheese);
@@ -48,7 +47,7 @@ public class CustomPizza extends Pizza{
     }
 
     public void removeToppings(String topping) {
-        if(!toppingsList.contains(topping)) {
+        if(!toppings.contains(topping)) {
             System.out.println( topping + " not found");
         }else{
             this.toppings.remove(topping);
@@ -62,7 +61,7 @@ public class CustomPizza extends Pizza{
     }
 
     public void removeSauces(String sauces) {
-        if(!saucesList.contains(sauces)) {
+        if(!this.sauces.contains(sauces)) {
             System.out.println(sauces + " not found");
         }else{
             this.sauces.remove(sauces);
@@ -74,7 +73,7 @@ public class CustomPizza extends Pizza{
         }
     }
     public void removeSides(String sides) {
-        if(!sidesList.contains(sides)) {
+        if(!this.sides.contains(sides)) {
             System.out.println(sides + " not found");
         }else {
             this.sides.remove(sides);
