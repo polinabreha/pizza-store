@@ -9,8 +9,8 @@ public class Drinks extends FixedItem {
         this.size = size;
     }
 
-    public static final List<String> drinkList = List.of("Water" , "Orange juice", "Coca-cola",
-            "Diet coca-cola" , "Sparkling water" , "Lemonade");
+    public static final List<String> drinkList = List.of("water" , "orange juice", "coca-cola",
+            "diet coca-cola" , "sparkling water" , "lemonade");
 
     public static final List<String> sizeList = List.of("small", "medium", "large");
     @Override
@@ -26,5 +26,13 @@ public class Drinks extends FixedItem {
             case "large" -> 3.00;
             default -> throw new IllegalArgumentException ("Invalid size");
         };
+    }
+
+    @Override
+    public String toString() {
+        return "Drinks\n" +
+                "size: '" + size  +
+                "\n name='" + name  ;
+
     }
 }

@@ -280,7 +280,7 @@ public class HomeScreen {
                 System.out.println("----" + drinks));
 
                 System.out.print("Choose the drink from the following options:");
-                drinkName = scanner.nextLine();
+                drinkName = scanner.nextLine().toLowerCase();
                 if(!Drinks.drinkList.contains(drinkName)){
                     System.out.println("Invalid choice");
                 }
@@ -309,9 +309,11 @@ public class HomeScreen {
     }
 
     public static void checkOut(Scanner scanner, Order order){
+        System.out.println("======ORDER======");
         for(MenuItem item : order.getItems()){
-            System.out.println("----" + item.getName()  + "\t" + String.format("%.2f", item.getPrice()));
+            System.out.println("----" + item  + "\t" + String.format("%.2f", item.getPrice()));
         }
+        System.out.println("-------------------");
         System.out.println("Total: $" + String.format("%.2f",order.calculateTotalPrice()));
         System.out.print("Confirm or cancel?");
         String confirmOrCancel = scanner.nextLine();
@@ -319,7 +321,7 @@ public class HomeScreen {
             Receipt.transaction(Receipt.buildReceipt(order));
             System.out.println("Your receipt has been successfully saved!");
         }else if(confirmOrCancel.equalsIgnoreCase("cancel")){
-            return;
+            System.out.println("Your order has been successfully deleted!");
         }
     }
 
