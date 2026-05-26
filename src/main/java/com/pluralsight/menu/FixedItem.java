@@ -1,6 +1,6 @@
 package com.pluralsight.menu;
 
-public class FixedItem implements MenuItem {
+public abstract class FixedItem implements MenuItem {
     protected String name;
     protected double price;
 
