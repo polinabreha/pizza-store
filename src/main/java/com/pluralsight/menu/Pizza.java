@@ -7,6 +7,7 @@ public abstract class Pizza implements MenuItem {
     protected int size;
     protected String crust;
     protected List<String>  meats, cheese , toppings , sauces , sides;
+    protected boolean stuffedCrust;
 
 
     public static final List<String> crustList = List.of(
@@ -75,6 +76,10 @@ public abstract class Pizza implements MenuItem {
 
     public int getSize() {
         return size;
+    }
+
+    public boolean isStuffedCrust() {
+        return stuffedCrust;
     }
 
     @Override

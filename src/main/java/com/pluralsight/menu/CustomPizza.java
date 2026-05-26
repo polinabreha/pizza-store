@@ -92,6 +92,10 @@ public class CustomPizza extends Pizza{
         }
     }
 
+    public void setStuffedCrust(boolean stuffedCrust) {
+        this.stuffedCrust = stuffedCrust;
+    }
+
     @Override
     public String getName() {
         return "Custom Pizza";
