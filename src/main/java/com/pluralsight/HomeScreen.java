@@ -60,6 +60,7 @@ public class HomeScreen {
                 break;
             case 4:
                 checkOut(scanner , order);
+                exit = true;
                 break;
             case 0:
                 exit = true;
@@ -149,7 +150,7 @@ public class HomeScreen {
 
 
         //extra cheese
-        System.out.println("Would you like to add extra cheese?(yes/no) ");
+        System.out.print("Would you like to add extra cheese?(yes/no) ");
         String extraCheese = scanner.nextLine();
         while (extraCheese.equalsIgnoreCase("yes")) {
             cheeseList.forEach(cheese -> {
@@ -181,7 +182,7 @@ public class HomeScreen {
 
 
         //extra regular toppings
-        System.out.println("Would you like to add extra topping?(yes/no) ");
+        System.out.print("Would you like to add extra topping?(yes/no) ");
         String extraTopping = scanner.nextLine();
         while(extraTopping.equalsIgnoreCase("yes")) {
             toppingsList.forEach(topping -> {
@@ -189,7 +190,7 @@ public class HomeScreen {
             });
             System.out.print("Enter your choice: ");
             String toppingExtra = scanner.nextLine();
-            System.out.println("Would you like to add extra topping?(yes/no)");
+            System.out.print("Would you like to add extra topping?(yes/no)");
             extraTopping = scanner.nextLine();
             customPizza.addToppings(toppingExtra);
         }
@@ -215,7 +216,7 @@ public class HomeScreen {
 
         //extra sauce
 
-        System.out.println("Would you like to add extra sauce?(yes/no)");
+        System.out.print("Would you like to add extra sauce?(yes/no)");
         String extraSauce = scanner.nextLine();
         while(extraSauce.equalsIgnoreCase("yes")) {
             saucesList.forEach(sauce -> {
@@ -223,7 +224,7 @@ public class HomeScreen {
             });
             System.out.print("Enter your choice: ");
             String sauceExtra = scanner.nextLine();
-            System.out.println("Would you like to add extra sauce?(yes/no)");
+            System.out.print("Would you like to add extra sauce?(yes/no)");
             extraSauce = scanner.nextLine();
             customPizza.addSauces(sauceExtra);
         }
@@ -254,7 +255,7 @@ public class HomeScreen {
             });
             System.out.print("Enter your choice: ");
             String sideExtra = scanner.nextLine();
-            System.out.println("Would you like to add extra side?(yes/no)");
+            System.out.print("Would you like to add extra side?(yes/no)");
             extraSide = scanner.nextLine();
             customPizza.addSides(sideExtra);
         }
@@ -320,7 +321,6 @@ public class HomeScreen {
         }else if(confirmOrCancel.equalsIgnoreCase("cancel")){
             return;
         }
-
     }
 
 }
