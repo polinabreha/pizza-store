@@ -100,18 +100,20 @@ public class HomeScreen {
 
         //meats
         String pizzaMeat = "";
-        while(!meatList.contains(pizzaMeat)){
-            System.out.println("Choose meats: ");
+        while(!meatList.contains(pizzaMeat) && !pizzaMeat.equals("skip")){
+            System.out.println("Choose the meat : ");
             meatList.forEach(meat -> {
                 System.out.println("----" + meat);
             });
-            System.out.print("Enter your choice: ");
+            System.out.print("Enter your choice or 'skip': ");
             pizzaMeat = scanner.nextLine();
-            if(!meatList.contains(pizzaMeat)){
+            if(!meatList.contains(pizzaMeat) && !pizzaMeat.equals("skip")){
                 System.out.println("Invalid choice");
             }
         }
-        customPizza.addMeat(pizzaMeat);
+        if(!pizzaMeat.equals("skip")){
+            customPizza.addMeat(pizzaMeat);
+        }
 
         //extra meat
         System.out.print("Would you like to add extra meat?(yes/no)");
@@ -130,18 +132,21 @@ public class HomeScreen {
 
        // cheese
         String pizzaCheese = "";
-        while(!cheeseList.contains(pizzaCheese)){
+        while(!cheeseList.contains(pizzaCheese)&& !pizzaCheese.equals("skip")){
             System.out.println("Choose cheese");
             cheeseList.forEach(cheese -> {
                 System.out.println("----" + cheese);
             });
-            System.out.print("Enter your choice: ");
+            System.out.print("Enter your choice or 'skip': ");
             pizzaCheese = scanner.nextLine();
-            if(!cheeseList.contains(pizzaCheese)){
+            if(!cheeseList.contains(pizzaCheese) && !pizzaCheese.equals("skip")){
                 System.out.println("Invalid choice");
             }
         }
-        customPizza.addCheese(pizzaCheese);
+        if(!pizzaCheese.equals("skip")){
+            customPizza.addCheese(pizzaCheese);
+        }
+
 
         //extra cheese
         System.out.println("Would you like to add extra cheese?(yes/no) ");
@@ -159,18 +164,21 @@ public class HomeScreen {
 
         //regular toppings
         String pizzaTopping = "";
-        while(!toppingsList.contains(pizzaTopping)){
+        while(!toppingsList.contains(pizzaTopping) && !pizzaTopping.equals("skip")){
             System.out.println("Choose topping :");
             toppingsList.forEach(topping -> {
                 System.out.println("----" + topping);
             });
-            System.out.print("Enter your choice: ");
+            System.out.print("Enter your choice or 'skip': ");
             pizzaTopping = scanner.nextLine();
-            if(!toppingsList.contains(pizzaTopping)){
+            if(!toppingsList.contains(pizzaTopping) && !pizzaTopping.equals("skip")){
                 System.out.println("Invalid choice");
             }
         }
-        customPizza.addToppings(pizzaTopping);
+        if(!pizzaTopping.equals("skip")){
+            customPizza.addToppings(pizzaTopping);
+        }
+
 
         //extra regular toppings
         System.out.println("Would you like to add extra topping?(yes/no) ");
@@ -189,18 +197,21 @@ public class HomeScreen {
         //sauces
 
         String pizzaSauce = "";
-        while(!saucesList.contains(pizzaSauce)){
+        while(!saucesList.contains(pizzaSauce) && !pizzaSauce.equals("skip")){
             System.out.println("Choose sauce :");
             saucesList.forEach(sauce -> {
                 System.out.println("----" + sauce);
             });
-            System.out.print("Enter your choice: ");
+            System.out.print("Enter your choice or 'skip': ");
             pizzaSauce = scanner.nextLine();
-            if(!saucesList.contains(pizzaSauce)){
+            if(!saucesList.contains(pizzaSauce) && !pizzaSauce.equals("skip")){
                 System.out.println("Invalid choice");
             }
         }
-        customPizza.addSauces(pizzaSauce);
+        if(!pizzaSauce.equals("skip")){
+            customPizza.addSauces(pizzaSauce);
+        }
+
 
         //extra sauce
 
@@ -219,18 +230,21 @@ public class HomeScreen {
 
         //sides
         String pizzaSide = "";
-        while(!sidesList.contains(pizzaSide)){
+        while(!sidesList.contains(pizzaSide) && !pizzaSide.equals("skip")){
             System.out.println("Choose side :");
             sidesList.forEach(side -> {
                 System.out.println("----" + side);
             });
-            System.out.print("Enter your choice: ");
+            System.out.print("Enter your choice or 'skip': ");
             pizzaSide = scanner.nextLine();
-            if(!sidesList.contains(pizzaSide)){
+            if(!sidesList.contains(pizzaSide) && !pizzaSide.equals("skip")){
                 System.out.println("Invalid choice");
             }
         }
-        customPizza.addSides(pizzaSide);
+        if(!pizzaSide.equals("skip")){
+            customPizza.addSides(pizzaSide);
+        }
+
         //extra sides
         System.out.print("Would you like to add extra side?(yes/no)");
         String extraSide = scanner.nextLine();
