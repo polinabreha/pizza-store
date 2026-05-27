@@ -7,6 +7,7 @@ public class PepperoniPizza extends CustomPizza{
         addCheese("mozzarella");
         addToppings("tomatoes");
         addSauces("marinara");
+        addSides("parmesan");
     }
 
     @Override

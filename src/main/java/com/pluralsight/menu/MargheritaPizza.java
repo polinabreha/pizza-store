@@ -9,6 +9,7 @@ public class MargheritaPizza extends CustomPizza{
         addToppings("basil");
         addSauces("marinara");
         addSauces("olive oil");
+        addSides("red pepper");
     }
 
     @Override

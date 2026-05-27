@@ -1,6 +1,6 @@
 package com.pluralsight.menu;
 
-public abstract class HawaiianPizza extends CustomPizza{
+public class HawaiianPizza extends CustomPizza{
     public HawaiianPizza(int size) {
         super(size);
 

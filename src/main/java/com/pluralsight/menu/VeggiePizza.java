@@ -11,6 +11,7 @@ public class VeggiePizza extends CustomPizza{
         addToppings("onions");
         addToppings("tomatoes");
         addSauces("marinara");
+        addSides("red pepper");
     }
 
     @Override
