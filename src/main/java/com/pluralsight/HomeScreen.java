@@ -277,6 +277,79 @@ public class HomeScreen {
 
     }
 
+    public static void signaturePizza(Scanner scanner, Order order) {
+        System.out.println("\tSignature Pizza:");
+        System.out.println("1. Hawaiian Pizza");
+        System.out.println("2. Margherita Pizza");
+        System.out.println("3. Veggie Pizza");
+        System.out.println("4. Pepperoni Pizza");
+        System.out.println("0. Go back");
+        System.out.print("Enter your choice: ");
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+
+        switch (choice) {
+            case 1:
+                //hawaiianPizza();
+                break;
+            case 2:
+                //margheritaPizza();
+                break;
+            case 3:
+                //veggiePizza();
+                break;
+            case  4:
+                break;
+            case 0:
+                break;
+            default:
+                System.out.println("Invalid choice");
+
+        }
+
+
+
+
+    }
+
+        public static void customisePizza(Scanner scanner, CustomPizza pizza) {
+            System.out.println("========PIZZA DETAILS===========");
+            System.out.println("Pizza:" + pizza.getName());
+            System.out.println(pizza);
+
+            System.out.print("Would you like to customise " + pizza.getName() + " (yes/no)");
+            String customise = scanner.nextLine();
+
+            if(customise.equalsIgnoreCase("yes")) {
+                System.out.print("Choose size (8, 12, 16)");
+                int size = Integer.parseInt(scanner.nextLine());
+                pizza = new CustomPizza(size);
+
+            }
+
+        }
+
+        public static void customiseMeats (Scanner scanner, CustomPizza pizza) {
+            if (!pizza.getMeats().isEmpty()) {
+                System.out.print("Would you like to remove meats?(yes/no)");
+                String meats = scanner.nextLine();
+                if (meats.equalsIgnoreCase("yes")) {
+                    System.out.println("Meats: " + pizza.getMeats());
+                    System.out.print("Enter name of the meat to be removed: ");
+                    String removedMeat = scanner.nextLine();
+                    pizza.removeMeat(removedMeat);
+                }
+            }
+            System.out.print("would you like to add meats?(yes/no)");
+            String meats = scanner.nextLine();
+            if (meats.equalsIgnoreCase("yes")) {
+                System.out.println("List of meats: " + meatList);
+                System.out.print("Enter name of the meat to be added: ");
+                String addedMeat = scanner.nextLine();
+                pizza.addMeat(addedMeat);
+            }
+        }
+
     public static void addDrink(Scanner scanner, Order order){
         String drinkName = "";
 

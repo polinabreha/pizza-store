@@ -94,6 +94,10 @@ public abstract class Pizza implements MenuItem {
         return size;
     }
 
+    public void setSize(int size) {
+        this.size = size;
+    }
+
     public boolean isStuffedCrust() {
         return stuffedCrust;
     }

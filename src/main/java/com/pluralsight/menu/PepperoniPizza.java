@@ -19,15 +19,4 @@ public class PepperoniPizza extends CustomPizza{
         return PizzaPrice.calculatePizzaPrice(this);
     }
 
-    @Override
-    public String toString() {
-        return  """
-                Crust: %s
-                Meat : %s
-                Cheese : %s
-                Topping : %s
-                Sauce : %s
-                Sides : %s
-                """.formatted(getCrust(),getMeats(),getSize(), getToppings(),getSauces(),getSides());
-    }
 }
