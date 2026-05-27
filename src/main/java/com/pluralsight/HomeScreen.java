@@ -40,7 +40,7 @@ public class HomeScreen {
                 }
 
             }
-        }catch (InputMismatchException e) {
+        }catch (NumberFormatException e) {
             System.out.println("Invalid input" + e.getMessage());
         }
     }
@@ -87,7 +87,7 @@ public class HomeScreen {
 
                 }
             }
-        }catch (InputMismatchException e) {
+        }catch (NumberFormatException e) {
             System.out.println("Invalid input" + e.getMessage());
         }
     }
@@ -331,7 +331,7 @@ public class HomeScreen {
 
             customisePizza(scanner, pizza);
             order.addItem(pizza);
-        }catch (InputMismatchException e) {
+        }catch (NumberFormatException e) {
             System.out.println("Invalid choice" + e.getMessage());
         }
 
@@ -651,24 +651,28 @@ public class HomeScreen {
     }
 
     public static void checkOut(Scanner scanner, Order order){
-        if(!isValidOrder(order)){
-            System.out.println("Invalid order!");
-            return;
-        }
+        try {
+            if (!isValidOrder(order)) {
+                System.out.println("Invalid order!");
+                return;
+            }
 
-        System.out.println("======ORDER======");
-        for(MenuItem item : order.getItems()){
-            System.out.println("----" + item );
-        }
-        System.out.println("-------------------");
-        System.out.println("Total: $" + String.format("%.2f",order.calculateTotalPrice()));
-        System.out.print("Confirm or cancel?");
-        String confirmOrCancel = scanner.nextLine();
-        if(confirmOrCancel.equalsIgnoreCase("confirm")){
-            Receipt.transaction(Receipt.buildReceipt(order));
-            System.out.println("Your receipt has been successfully saved!");
-        }else if(confirmOrCancel.equalsIgnoreCase("cancel")){
-            System.out.println("Your order has been successfully deleted!");
+            System.out.println("======ORDER======");
+            for (MenuItem item : order.getItems()) {
+                System.out.println("----" + item);
+            }
+            System.out.println("-------------------");
+            System.out.println("Total: $" + String.format("%.2f", order.calculateTotalPrice()));
+            System.out.print("Confirm or cancel?");
+            String confirmOrCancel = scanner.nextLine();
+            if (confirmOrCancel.equalsIgnoreCase("confirm")) {
+                Receipt.transaction(Receipt.buildReceipt(order));
+                System.out.println("Your receipt has been successfully saved!");
+            } else if (confirmOrCancel.equalsIgnoreCase("cancel")) {
+                System.out.println("Your order has been successfully deleted!");
+            }
+        }catch (InputMismatchException e){
+            System.out.println("Invalid choice" + e.getMessage());
         }
     }
 
