@@ -1,19 +1,17 @@
 package com.pluralsight.menu;
 
-public class MargheritaPizza extends CustomPizza{
-    public MargheritaPizza(int size) {
+public class PepperoniPizza extends CustomPizza{
+    public PepperoniPizza(int size) {
         super(size);
-        addCrust("regular");
+        addMeat("pepperoni");
         addCheese("mozzarella");
         addToppings("tomatoes");
-        addToppings("basil");
         addSauces("marinara");
-        addSauces("olive oil");
     }
 
     @Override
     public String getName() {
-        return "Margherita Pizza" ;
+        return "Pepperoni Pizza";
     }
 
     @Override
