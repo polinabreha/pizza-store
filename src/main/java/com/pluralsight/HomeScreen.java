@@ -46,7 +46,8 @@ public class HomeScreen {
                 "2. Signature Pizzas\n" +
                 "3. Add Drink\n" +
                 "4. Add Garlic Knots\n" +
-                "5. Checkout\n" +
+                "5. Cart\n" +
+                "6. Checkout\n" +
                 "0. Cancel Order ");
         System.out.print("Choose from the following options : ");
         int choice = scanner.nextInt();
@@ -56,7 +57,7 @@ public class HomeScreen {
                 addPizza(scanner , order);
                 break;
             case 2:
-                //signaturepizza();
+                signaturePizza(scanner, order);
                 break;
             case 3 :
                 addDrink(scanner , order);
@@ -64,7 +65,10 @@ public class HomeScreen {
             case 4 :
                 addGarlicKnots(order);
                 break;
-            case 5:
+            case 5 :
+                cart(scanner, order);
+                break;
+            case 6:
                 checkOut(scanner , order);
                 exit = true;
                 break;
@@ -332,7 +336,10 @@ public class HomeScreen {
                 customiseToppings(scanner, pizza);
                 customiseSauces(scanner, pizza);
                 customiseSides(scanner, pizza);
+                System.out.println("Pizza has been customised and added to your cart!");
 
+            }else if(customise.equalsIgnoreCase("no")) {
+                System.out.println("Pizza has been added to your cart!");
             }
     }
 
@@ -411,7 +418,7 @@ public class HomeScreen {
            }
        }
 
-       System.out.println("Would you like to add toppings?(yes/no)");
+       System.out.print("Would you like to add toppings?(yes/no)");
        String choice = scanner.nextLine();
        if (choice.equalsIgnoreCase("yes")) {
            boolean add = true;
@@ -462,7 +469,7 @@ public class HomeScreen {
    }
 
    public static void customiseSides(Scanner scanner, CustomPizza pizza) {
-       System.out.println("Would you like to remove sides?(yes/no)");
+       System.out.print("Would you like to remove sides?(yes/no)");
        String choice = scanner.nextLine();
        if (choice.equalsIgnoreCase("yes")) {
            boolean remove = true;
@@ -547,6 +554,44 @@ public class HomeScreen {
         }
 
         return hasPizza || hasOtherThings;
+    }
+
+    public static void cart(Scanner scanner, Order order ){
+        viewCart(order);
+        System.out.print("\nWould you like to remove something from the cart? (yes/no)");
+        String choice = scanner.nextLine();
+        if (choice.equalsIgnoreCase("yes")) {
+            while (true) {
+                System.out.print("Enter the name of the item to be removed (or enter done): ");
+                String itemName = scanner.nextLine();
+                if (itemName.equalsIgnoreCase("done")) {
+                    break;
+                }
+
+                boolean remove = order.removeItem(itemName);
+                if (!remove) {
+                    System.out.println("Item has been removed!");
+                    return;
+                }else{
+                    System.out.println("Item could not be removed!");
+                }
+
+            }
+        }
+
+    }
+
+    public static void viewCart( Order order){
+        System.out.println("========CART========");
+        if (order.getItems().isEmpty()){
+            System.out.println("There are no items in your order!");
+            return;
+        }
+        for(MenuItem item : order.getItems()){
+            System.out.println("----" + item);
+        }
+
+        System.out.printf("\nTotal : " + "$%.2f", order.calculateTotalPrice());
     }
 
     public static void checkOut(Scanner scanner, Order order){

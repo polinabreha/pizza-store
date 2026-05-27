@@ -15,8 +15,9 @@ public class Order {
         this.items.add(item);
     }
 
-    public void removeItem(MenuItem item) {
-        this.items.remove(item);
+    public boolean removeItem(String name) {
+        this.items.removeIf(item -> item.getName().equalsIgnoreCase(name));
+        return false;
     }
 
     public List<MenuItem> getItems() {
