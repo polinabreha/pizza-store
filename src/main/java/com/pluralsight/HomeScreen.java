@@ -43,14 +43,14 @@ public class HomeScreen {
     public static void orderScreen(Scanner scanner , Order order) {
         boolean exit = false;
         while (!exit) {
-        System.out.println(Colors.BACKGROUND_RED +"1. Add Pizza\n" +
-                "2. Signature Pizzas\n" +
-                "3. Add Drink\n" +
-                "4. Add Garlic Knots\n" +
-                "5. Cart\n" +
-                "6. Checkout\n" +
-                "0. Cancel Order ");
-        System.out.print("Choose from the following options : " + Colors.ANSI_RESET);
+        System.out.println(Colors.ANSI_RED +"1. Add Pizza\n" + Colors.ANSI_RESET +
+                Colors.YELLOW + "2. Signature Pizzas\n" + Colors.ANSI_RESET +
+                Colors.ANSI_RED + "3. Add Drink\n" + Colors.ANSI_RESET +
+                Colors.YELLOW + "4. Add Garlic Knots\n" + Colors.ANSI_RESET +
+                Colors.ANSI_RED + "5. Cart\n" + Colors.ANSI_RESET +
+                Colors.YELLOW + "6. Checkout\n" + Colors.ANSI_RESET +
+                Colors.ANSI_RED + "0. Cancel Order " + Colors.ANSI_RESET);
+        System.out.print(Colors.BACKGROUND_YELLOW  + "Choose from the following options : " + Colors.ANSI_RESET);
         int choice = scanner.nextInt();
         scanner.nextLine();
         switch (choice) {
