@@ -1,0 +1,25 @@
+==========Receipt===========
+
+Date: 2026-05-27_13:39:40
+
+Items: 
+Custom Pizza
+Crust : thin
+Meats : [ham]
+Cheese : [mozzarella]
+Toppings : [pineapple]
+Sauces : [marinara]
+Sides : [parmesan]
+Price : 10.25
+	Custom Pizza
+Crust : cauliflower
+Meats : [ham]
+Cheese : [mozzarella]
+Toppings : [spinach, olives, mushrooms, onions, tomatoes]
+Sauces : [marinara]
+Sides : [red pepper]
+Price : 15.50
+	water  (large)     -3.00
+	
+Total: 28.75
+Thank you for visiting us today!
