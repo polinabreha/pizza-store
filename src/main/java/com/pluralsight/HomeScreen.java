@@ -1,5 +1,6 @@
 package com.pluralsight;
 import com.pluralsight.menu.*;
+import com.pluralsight.design.*;
 
 import java.util.Scanner;
 
@@ -8,6 +9,7 @@ import static com.pluralsight.menu.Pizza.*;
 public class HomeScreen {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        ASCII.storeLogo();
         homeScreen(scanner);
 
     }
@@ -41,9 +43,10 @@ public class HomeScreen {
         boolean exit = false;
         while (!exit) {
         System.out.println("1. Add Pizza\n" +
-                "2. Add Drink\n" +
-                "3. Add Garlic Knots\n" +
-                "4. Checkout\n" +
+                "2. Signature Pizzas\n" +
+                "3. Add Drink\n" +
+                "4. Add Garlic Knots\n" +
+                "5. Checkout\n" +
                 "0. Cancel Order ");
         System.out.print("Choose from the following options : ");
         int choice = scanner.nextInt();
@@ -52,13 +55,16 @@ public class HomeScreen {
             case 1:
                 addPizza(scanner , order);
                 break;
-            case 2 :
-                addDrink(scanner , order);
+            case 2:
+                //signaturepizza();
                 break;
             case 3 :
+                addDrink(scanner , order);
+                break;
+            case 4 :
                 addGarlicKnots(order);
                 break;
-            case 4:
+            case 5:
                 checkOut(scanner , order);
                 exit = true;
                 break;

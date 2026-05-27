@@ -1,0 +1,18 @@
+==========Receipt===========
+
+Date: 2026-05-26_14:28:16
+
+Items: 
+Custom Pizza
+Crust : thin
+Meats : [ham]
+Cheese : []
+Toppings : [onions]
+Sauces : []
+Sides : [red pepper]
+Price : 9.50
+	 --- Stuffed Crust
+water  (small)     -2.00
+	
+Total: 11.50
+Thank you for visiting us today!
