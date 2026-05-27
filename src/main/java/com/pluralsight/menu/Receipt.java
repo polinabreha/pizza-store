@@ -36,7 +36,6 @@ public class Receipt {
         sb.append("Items: ").append("\n");
         for(MenuItem item : order.getItems()) {
             sb.append(item).append("\t");
-            //sb.append(String.format("%.2f", item.getPrice())).append("\n");
             if(item instanceof CustomPizza) {
                 CustomPizza customPizza = (CustomPizza) item;
                 if(customPizza.isStuffedCrust()){

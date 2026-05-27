@@ -2,6 +2,7 @@ package com.pluralsight;
 import com.pluralsight.menu.*;
 import com.pluralsight.design.*;
 
+import java.util.List;
 import java.util.Scanner;
 
 import static com.pluralsight.menu.Pizza.*;
@@ -16,12 +17,12 @@ public class HomeScreen {
 
     public static void homeScreen(Scanner scanner) {
         boolean exit = false;
-        System.out.println("Welcome to the Pizza Store");
+        System.out.println(Colors.YELLOW + "WELCOME to the PIZZA STORE" + Colors.ANSI_RESET);
         while (!exit) {
 
             System.out.println("1. New Order ");
             System.out.println("0. Exit ");
-            System.out.print("Choose from the following options : ");
+            System.out.print(Colors.BACKGROUND_YELLOW + "Choose from the following options : " + Colors.ANSI_RESET);
             int choice = scanner.nextInt();
             scanner.nextLine();
             switch (choice) {
@@ -42,14 +43,14 @@ public class HomeScreen {
     public static void orderScreen(Scanner scanner , Order order) {
         boolean exit = false;
         while (!exit) {
-        System.out.println("1. Add Pizza\n" +
+        System.out.println(Colors.BACKGROUND_RED +"1. Add Pizza\n" +
                 "2. Signature Pizzas\n" +
                 "3. Add Drink\n" +
                 "4. Add Garlic Knots\n" +
                 "5. Cart\n" +
                 "6. Checkout\n" +
                 "0. Cancel Order ");
-        System.out.print("Choose from the following options : ");
+        System.out.print("Choose from the following options : " + Colors.ANSI_RESET);
         int choice = scanner.nextInt();
         scanner.nextLine();
         switch (choice) {
@@ -562,18 +563,19 @@ public class HomeScreen {
         String choice = scanner.nextLine();
         if (choice.equalsIgnoreCase("yes")) {
             while (true) {
-                System.out.print("Enter the name of the item to be removed (or enter done): ");
-                String itemName = scanner.nextLine();
-                if (itemName.equalsIgnoreCase("done")) {
+                System.out.print("Enter the number of the item to be removed (or enter 0 to finish): ");
+                int itemNumber = scanner.nextInt();
+                scanner.nextLine();
+                if (itemNumber == 0) {
                     break;
                 }
 
-                boolean remove = order.removeItem(itemName);
+                boolean remove = order.removeItem(itemNumber - 1);
                 if (!remove) {
-                    System.out.println("Item has been removed!");
+                    System.out.println("Item could not be removed!");
                     return;
                 }else{
-                    System.out.println("Item could not be removed!");
+                    System.out.println("Item has been removed!");
                 }
 
             }
@@ -587,9 +589,14 @@ public class HomeScreen {
             System.out.println("There are no items in your order!");
             return;
         }
-        for(MenuItem item : order.getItems()){
-            System.out.println("----" + item);
+
+        List<MenuItem> items = order.getItems();
+
+        for (int i = 0; i<items.size(); i++){
+            System.out.println((i + 1) + ". " + items.get(i).getName());
+            System.out.println(items.get(i));
         }
+
 
         System.out.printf("\nTotal : " + "$%.2f", order.calculateTotalPrice());
     }

@@ -1,0 +1,17 @@
+==========Receipt===========
+
+Date: 2026-05-27_14:10:57
+
+Items: 
+Custom Pizza
+Crust : thin
+Meats : [ham]
+Cheese : [mozzarella]
+Toppings : [pineapple]
+Sauces : [marinara]
+Sides : [parmesan]
+Price : 15.50
+	orange juice  (small)     -2.00
+	
+Total: 17.50
+Thank you for visiting us today!

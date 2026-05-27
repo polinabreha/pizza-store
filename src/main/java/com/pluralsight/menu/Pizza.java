@@ -107,7 +107,7 @@ public abstract class Pizza implements MenuItem {
     @Override
     public String toString() {
         return """
-                Custom Pizza
+                %s
                 Crust : %s
                 Meats : %s
                 Cheese : %s
@@ -115,7 +115,7 @@ public abstract class Pizza implements MenuItem {
                 Sauces : %s
                 Sides : %s
                 Price : %.2f
-                """.formatted(crust,meats,cheese,toppings,sauces,sides,getPrice());
+                """.formatted(getName(),crust,meats,cheese,toppings,sauces,sides,getPrice());
 
 
     }

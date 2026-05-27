@@ -15,8 +15,11 @@ public class Order {
         this.items.add(item);
     }
 
-    public boolean removeItem(String name) {
-        this.items.removeIf(item -> item.getName().equalsIgnoreCase(name));
+    public boolean removeItem(int itemNumber) {
+        if (itemNumber >= 0 && itemNumber < this.items.size()) {
+            items.remove(itemNumber);
+            return true;
+        }
         return false;
     }
 
@@ -25,7 +28,7 @@ public class Order {
     }
 
     public double calculateTotalPrice() {
-        double totalPrice = 0;
+        double totalPrice ;
         totalPrice = this.items.stream().mapToDouble(MenuItem::getPrice).sum();
         return totalPrice;
     }

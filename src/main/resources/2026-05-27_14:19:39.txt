@@ -1,0 +1,16 @@
+==========Receipt===========
+
+Date: 2026-05-27_14:19:39
+
+Items: 
+Margherita Pizza
+Crust : regular
+Meats : []
+Cheese : [mozzarella]
+Toppings : [tomatoes, basil]
+Sauces : [marinara, olive oil]
+Sides : [red pepper]
+Price : 9.25
+	
+Total: 9.25
+Thank you for visiting us today!

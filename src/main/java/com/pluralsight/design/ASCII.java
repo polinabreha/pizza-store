@@ -2,7 +2,7 @@ package com.pluralsight.design;
 
 public class ASCII {
     public static void storeLogo(){
-        String logo =
+        String logo = Colors.ANSI_RED +
                 """
                     
                         
@@ -14,7 +14,7 @@ public class ASCII {
                          |____|   |___/_______ \\/_______ \\____|__  / /_______  /  |____|   \\_______  /____|_  /_______  /
                                               \\/        \\/       \\/          \\/                    \\/       \\/        \\/\s
                         
-                        """;
+                        """ + Colors.ANSI_RESET;
 
         System.out.println(logo);
     }
