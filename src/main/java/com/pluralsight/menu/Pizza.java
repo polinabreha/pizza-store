@@ -74,6 +74,22 @@ public abstract class Pizza implements MenuItem {
         return cheese;
     }
 
+    public String getCrust() {
+        return crust;
+    }
+
+    public List<String> getToppings() {
+        return toppings;
+    }
+
+    public List<String> getSauces() {
+        return sauces;
+    }
+
+    public List<String> getSides() {
+        return sides;
+    }
+
     public int getSize() {
         return size;
     }
