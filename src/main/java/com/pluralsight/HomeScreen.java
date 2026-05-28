@@ -40,7 +40,7 @@ public class HomeScreen {
                 }
 
             }
-        }catch (NumberFormatException e) {
+        }catch (InputMismatchException e) {
             System.out.println("Invalid input" + e.getMessage());
         }
     }
@@ -87,7 +87,7 @@ public class HomeScreen {
 
                 }
             }
-        }catch (NumberFormatException e) {
+        }catch (InputMismatchException e) {
             System.out.println("Invalid input" + e.getMessage());
         }
     }
