@@ -1,0 +1,26 @@
+==========Receipt===========
+
+Date: 2026-05-28_14:03:33
+
+Items: 
+Custom Pizza
+Crust : thin
+Meats : [ham]
+Cheese : [goat cheese]
+Toppings : [onions]
+Sauces : [bbq]
+Sides : [parmesan]
+Price : 15.50
+	Pepperoni Pizza
+Crust : null
+Meats : [pepperoni]
+Cheese : [mozzarella]
+Toppings : [tomatoes]
+Sauces : [marinara]
+Sides : [parmesan]
+Price : 10.25
+	Garlic Knots         -1.50
+	lemonade  (small)     -2.00
+	
+Total: 29.25
+Thank you for visiting us today!

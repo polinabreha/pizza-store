@@ -41,7 +41,7 @@ public class HomeScreen {
 
             }
         }catch (InputMismatchException e) {
-            System.out.println("Invalid input" + e.getMessage());
+            System.out.println("Invalid input " + e.getMessage());
         }
     }
 
@@ -328,10 +328,11 @@ public class HomeScreen {
                     System.out.println("Invalid choice");
 
             }
-
             customisePizza(scanner, pizza);
             order.addItem(pizza);
-        }catch (NumberFormatException e) {
+
+
+        }catch (InputMismatchException e) {
             System.out.println("Invalid choice" + e.getMessage());
         }
 
@@ -362,6 +363,7 @@ public class HomeScreen {
             }
         }catch (InputMismatchException e){
             System.out.println("Invalid choice" + e.getMessage());
+
         }
     }
 
