@@ -1,0 +1,28 @@
+==========Receipt===========
+
+Date: 2026-05-28_19:12:33
+
+Items: 
+Custom Pizza
+Crust : thin
+Meats : [ham, bacon]
+Cheese : [mozzarella, mozzarella]
+Toppings : [tomatoes, basil]
+Sauces : [marinara]
+Sides : [parmesan]
+Price : 17.10
+	 --- Stuffed Crust
+Hawaiian Pizza
+Crust : thin
+Meats : [ham]
+Cheese : [mozzarella]
+Toppings : [pineapple]
+Sauces : [marinara]
+Sides : [parmesan]
+Price : 10.25
+	lemonade  (small)     -2.00
+	water  (medium)     -2.50
+	Garlic Knots         -1.50
+	
+Total: 33.35
+Thank you for visiting us today!
