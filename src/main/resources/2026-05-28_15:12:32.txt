@@ -1,0 +1,26 @@
+==========Receipt===========
+
+Date: 2026-05-28_15:12:32
+
+Items: 
+Garlic Knots         -1.50
+	Hawaiian Pizza
+Crust : thin
+Meats : [ham]
+Cheese : [mozzarella]
+Toppings : [pineapple]
+Sauces : [marinara]
+Sides : [parmesan]
+Price : 10.25
+	water  (medium)     -2.50
+	Custom Pizza
+Crust : thin
+Meats : [sausage]
+Cheese : [mozzarella]
+Toppings : [mushrooms]
+Sauces : [marinara]
+Sides : []
+Price : 10.25
+	
+Total: 24.50
+Thank you for visiting us today!
