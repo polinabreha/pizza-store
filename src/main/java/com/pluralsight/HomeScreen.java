@@ -19,9 +19,8 @@ public class HomeScreen {
     public static void homeScreen(Scanner scanner) {
         try {
             boolean exit = false;
-            System.out.println(Colors.YELLOW + "WELCOME to the PIZZA STORE" + Colors.ANSI_RESET);
+            System.out.println(Colors.YELLOW + "\t\t\t\tWELCOME to the PIZZA STORE" + Colors.ANSI_RESET);
             while (!exit) {
-
                 System.out.println("1. New Order ");
                 System.out.println("0. Exit ");
                 System.out.print(Colors.BACKGROUND_YELLOW + "Choose from the following options : " + Colors.ANSI_RESET);
@@ -288,7 +287,7 @@ public class HomeScreen {
             }
 
             order.addItem(customPizza);
-            System.out.println("Pizza has been added to your order!");
+            System.out.println(Colors.HIGH_INTENSITY + Colors.YELLOW + "Pizza has been added to your order!" + Colors.ANSI_RESET);
         }catch (Exception e) {
             System.out.println(" Please try again..." + e.getMessage());
         }
@@ -297,13 +296,13 @@ public class HomeScreen {
 
     public static void signaturePizza(Scanner scanner, Order order) {
         try {
-            System.out.println("\tSignature Pizza:");
-            System.out.println("1. Hawaiian Pizza");
-            System.out.println("2. Margherita Pizza");
-            System.out.println("3. Veggie Pizza");
-            System.out.println("4. Pepperoni Pizza");
-            System.out.println("0. Go back");
-            System.out.print("Enter your choice: ");
+            System.out.println(Colors.HIGH_INTENSITY + Colors.ANSI_RED +"\tSignature Pizzas:" + Colors.ANSI_RESET);
+            System.out.println(Colors.YELLOW + "1. Hawaiian Pizza"+ Colors.ANSI_RESET);
+            System.out.println(Colors.ANSI_RED +"2. Margherita Pizza"+ Colors.ANSI_RESET);
+            System.out.println(Colors.YELLOW + "3. Veggie Pizza"+ Colors.ANSI_RESET);
+            System.out.println(Colors.ANSI_RED +"4. Pepperoni Pizza"+ Colors.ANSI_RESET);
+            System.out.println(Colors.YELLOW + "0. Go back"+ Colors.ANSI_RESET);
+            System.out.print(Colors.HIGH_INTENSITY + Colors.ANSI_RED +"Enter your choice: "+ Colors.ANSI_RESET);
             int choice = scanner.nextInt();
             scanner.nextLine();
 
@@ -355,10 +354,10 @@ public class HomeScreen {
                 customiseToppings(scanner, pizza);
                 customiseSauces(scanner, pizza);
                 customiseSides(scanner, pizza);
-                System.out.println("Pizza has been customised and added to your cart!");
+                System.out.println(Colors.HIGH_INTENSITY + Colors.YELLOW + "Pizza has been customised and added to your cart!" + Colors.ANSI_RESET);
 
             } else if (customise.equalsIgnoreCase("no")) {
-                System.out.println("Pizza has been added to your cart!");
+                System.out.println(Colors.HIGH_INTENSITY + Colors.YELLOW + "Pizza has been added to your cart!" + Colors.ANSI_RESET);
             }
         }catch (InputMismatchException e){
             System.out.println("Invalid choice" + e.getMessage());
@@ -572,7 +571,7 @@ public class HomeScreen {
             }
             Drinks drink = new Drinks(drinkName, drinkSize);
             order.addItem(drink);
-            System.out.println("Drink has been added to your order!");
+            System.out.println(Colors.HIGH_INTENSITY + Colors.YELLOW +"Drink has been added to your order!" + Colors.ANSI_RESET);
         }catch (InputMismatchException e){
             System.out.println("Invalid choice" + e.getMessage());
         }
@@ -582,7 +581,7 @@ public class HomeScreen {
     public static void addGarlicKnots(Order order){
         Sides garlicKnots = new Sides("Garlic Knots", 1.50);
         order.addItem(garlicKnots);
-        System.out.println("Garlic Knots has been added to your order!");
+        System.out.println(Colors.HIGH_INTENSITY + Colors.YELLOW + "Garlic Knots has been added to your order!"  + Colors.ANSI_RESET);
     }
 
     public static boolean isValidOrder(Order order){
@@ -605,7 +604,7 @@ public class HomeScreen {
     public static void cart(Scanner scanner, Order order ){
         try {
             viewCart(order);
-            System.out.print("\nWould you like to remove something from the cart? (yes/no)");
+            System.out.print(Colors.HIGH_INTENSITY + Colors.YELLOW + "\nWould you like to remove something from the cart? (yes/no)" + Colors.ANSI_RESET);
             String choice = scanner.nextLine();
             if (choice.equalsIgnoreCase("yes")) {
                 while (true) {
@@ -621,7 +620,7 @@ public class HomeScreen {
                         System.out.println("Item could not be removed!");
                         return;
                     } else {
-                        System.out.println("Item has been removed!");
+                        System.out.println(Colors.HIGH_INTENSITY + Colors.YELLOW + "Item has been removed!" + Colors.ANSI_RESET);
                     }
 
                 }
