@@ -1,0 +1,27 @@
+==========Receipt===========
+
+Date: 2026-05-28_11:32:52
+
+Items: 
+  Hawaiian Pizza
+Crust : thin
+Meats : [ham]
+Cheese : [mozzarella]
+Toppings : [pineapple]
+Sauces : [marinara]
+Sides : [parmesan]
+Price : 10.25
+	Margherita Pizza
+Crust : regular
+Meats : [chicken]
+Cheese : [mozzarella]
+Toppings : [tomatoes, basil]
+Sauces : [marinara, olive oil]
+Sides : [red pepper]
+Price : 15.50
+	lemonade  (medium)     -2.50
+	water  (small)     -2.00
+	Garlic Knots         -1.50
+	
+Total: 31.75
+Thank you for visiting us today!

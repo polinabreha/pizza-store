@@ -32,6 +32,7 @@ public class HomeScreen {
                         orderScreen(scanner, order);
                         break;
                     case 0:
+                        ASCII.logo2();
                         exit = true;
                         break;
                     default:
