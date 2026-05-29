@@ -31,7 +31,7 @@ public class Drinks extends FixedItem {
     @Override
     public String toString() {
         return """
-                %s  (%s)     -%.2f
+                %s  (%s)     $%.2f
                 """.formatted(name,size,getPrice());
 
     }

@@ -8,7 +8,7 @@ public class Sides extends FixedItem {
     @Override
     public String toString() {
         return """
-                %s         -%.2f
+                %s         $%.2f
                 """.formatted(name,getPrice());
     }
 }
